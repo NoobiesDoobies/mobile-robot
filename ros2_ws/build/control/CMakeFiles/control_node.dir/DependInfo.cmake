@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/carlios/ros2_ws/src/control/src/control_node.cpp" "/home/carlios/ros2_ws/build/control/CMakeFiles/control_node.dir/src/control_node.cpp.o"
+  "/home/carlios/mobile-robot/ros2_ws/src/control/src/control_node.cpp" "/home/carlios/mobile-robot/ros2_ws/build/control/CMakeFiles/control_node.dir/src/control_node.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,7 +17,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/carlios/ros2_ws/src/control/include"
+  "/home/carlios/mobile-robot/ros2_ws/src/control/include"
   "/opt/ros/foxy/include"
   )
 

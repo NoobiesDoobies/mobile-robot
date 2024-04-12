@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/carlios/ros2_ws/src/control
+CMAKE_SOURCE_DIR = /home/carlios/mobile-robot/ros2_ws/src/control
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/carlios/ros2_ws/build/control
+CMAKE_BINARY_DIR = /home/carlios/mobile-robot/ros2_ws/build/control
 
 # Utility rule file for control_uninstall.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/carlios/ros2_ws/build/control
 include CMakeFiles/control_uninstall.dir/progress.make
 
 CMakeFiles/control_uninstall:
-	/usr/bin/cmake -P /home/carlios/ros2_ws/build/control/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /home/carlios/mobile-robot/ros2_ws/build/control/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 control_uninstall: CMakeFiles/control_uninstall
 control_uninstall: CMakeFiles/control_uninstall.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/control_uninstall.dir/clean:
 .PHONY : CMakeFiles/control_uninstall.dir/clean
 
 CMakeFiles/control_uninstall.dir/depend:
-	cd /home/carlios/ros2_ws/build/control && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/carlios/ros2_ws/src/control /home/carlios/ros2_ws/src/control /home/carlios/ros2_ws/build/control /home/carlios/ros2_ws/build/control /home/carlios/ros2_ws/build/control/CMakeFiles/control_uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/carlios/mobile-robot/ros2_ws/build/control && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/carlios/mobile-robot/ros2_ws/src/control /home/carlios/mobile-robot/ros2_ws/src/control /home/carlios/mobile-robot/ros2_ws/build/control /home/carlios/mobile-robot/ros2_ws/build/control /home/carlios/mobile-robot/ros2_ws/build/control/CMakeFiles/control_uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/control_uninstall.dir/depend
 
