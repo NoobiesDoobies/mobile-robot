@@ -1,0 +1,17 @@
+/home/carlios/ros2_ws/install/control/lib/control/control_node
+/home/carlios/ros2_ws/install/control/share/control/launch/control_launch.xml
+/home/carlios/ros2_ws/install/control/share/ament_index/resource_index/package_run_dependencies/control
+/home/carlios/ros2_ws/install/control/share/ament_index/resource_index/parent_prefix_path/control
+/home/carlios/ros2_ws/install/control/share/control/environment/ament_prefix_path.sh
+/home/carlios/ros2_ws/install/control/share/control/environment/ament_prefix_path.dsv
+/home/carlios/ros2_ws/install/control/share/control/environment/path.sh
+/home/carlios/ros2_ws/install/control/share/control/environment/path.dsv
+/home/carlios/ros2_ws/install/control/share/control/local_setup.bash
+/home/carlios/ros2_ws/install/control/share/control/local_setup.sh
+/home/carlios/ros2_ws/install/control/share/control/local_setup.zsh
+/home/carlios/ros2_ws/install/control/share/control/local_setup.dsv
+/home/carlios/ros2_ws/install/control/share/control/package.dsv
+/home/carlios/ros2_ws/install/control/share/ament_index/resource_index/packages/control
+/home/carlios/ros2_ws/install/control/share/control/cmake/controlConfig.cmake
+/home/carlios/ros2_ws/install/control/share/control/cmake/controlConfig-version.cmake
+/home/carlios/ros2_ws/install/control/share/control/package.xml
