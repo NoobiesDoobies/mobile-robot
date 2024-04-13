@@ -1,0 +1,3 @@
+[console_scripts]
+task_node = task.task_node:main
+

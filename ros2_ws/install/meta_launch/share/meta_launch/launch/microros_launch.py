@@ -5,9 +5,9 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='micro_ros_agent',
-            executable='micro_ros_agent',
+            executable='micro_ros_agent udp4',
             name='micro_ros_agent',
             output='screen',
-            parameters=[{'transport': 'udp4', 'port': 8888}]
+            arguments=['udp4', '-p', '8080']
         )
     ])

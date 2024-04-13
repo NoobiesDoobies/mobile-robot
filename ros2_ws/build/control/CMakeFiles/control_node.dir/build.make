@@ -84,6 +84,7 @@ control_node: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_introspecti
 control_node: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_c.so
 control_node: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_introspection_cpp.so
 control_node: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_cpp.so
+control_node: /home/carlios/mobile-robot/ros2_ws/install/kinematics/lib/libkinematics.a
 control_node: /opt/ros/foxy/lib/liblibstatistics_collector.so
 control_node: /opt/ros/foxy/lib/liblibstatistics_collector_test_msgs__rosidl_typesupport_introspection_c.so
 control_node: /opt/ros/foxy/lib/liblibstatistics_collector_test_msgs__rosidl_generator_c.so

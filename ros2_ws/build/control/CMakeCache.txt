@@ -391,6 +391,9 @@ foonathan_memory_DIR:PATH=/opt/ros/foxy/lib/foonathan_memory/cmake
 //The directory containing a CMake configuration file for geometry_msgs.
 geometry_msgs_DIR:PATH=/opt/ros/foxy/share/geometry_msgs/cmake
 
+//The directory containing a CMake configuration file for kinematics.
+kinematics_DIR:PATH=/home/carlios/mobile-robot/ros2_ws/install/kinematics/share/kinematics/cmake
+
 //The directory containing a CMake configuration file for libstatistics_collector.
 libstatistics_collector_DIR:PATH=/opt/ros/foxy/share/libstatistics_collector/cmake
 

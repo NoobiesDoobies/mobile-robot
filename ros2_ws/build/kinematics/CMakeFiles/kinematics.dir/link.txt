@@ -1,0 +1,2 @@
+/usr/bin/ar qc libkinematics.a  CMakeFiles/kinematics.dir/src/differential_drive.cpp.o
+/usr/bin/ranlib libkinematics.a

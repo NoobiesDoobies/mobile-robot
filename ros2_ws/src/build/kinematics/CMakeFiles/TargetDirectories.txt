@@ -1,0 +1,10 @@
+/home/carlios/mobile-robot/ros2_ws/src/build/kinematics/CMakeFiles/install/strip.dir
+/home/carlios/mobile-robot/ros2_ws/src/build/kinematics/CMakeFiles/install/local.dir
+/home/carlios/mobile-robot/ros2_ws/src/build/kinematics/CMakeFiles/edit_cache.dir
+/home/carlios/mobile-robot/ros2_ws/src/build/kinematics/CMakeFiles/test.dir
+/home/carlios/mobile-robot/ros2_ws/src/build/kinematics/CMakeFiles/kinematics.dir
+/home/carlios/mobile-robot/ros2_ws/src/build/kinematics/CMakeFiles/install.dir
+/home/carlios/mobile-robot/ros2_ws/src/build/kinematics/CMakeFiles/list_install_components.dir
+/home/carlios/mobile-robot/ros2_ws/src/build/kinematics/CMakeFiles/rebuild_cache.dir
+/home/carlios/mobile-robot/ros2_ws/src/build/kinematics/CMakeFiles/kinematics_uninstall.dir
+/home/carlios/mobile-robot/ros2_ws/src/build/kinematics/CMakeFiles/uninstall.dir

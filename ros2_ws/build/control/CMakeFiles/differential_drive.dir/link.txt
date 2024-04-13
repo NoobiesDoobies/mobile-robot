@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdifferential_drive.a  CMakeFiles/differential_drive.dir/include/control/differential_drive.cpp.o
+/usr/bin/ranlib libdifferential_drive.a

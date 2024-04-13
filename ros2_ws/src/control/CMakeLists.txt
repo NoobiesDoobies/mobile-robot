@@ -20,17 +20,22 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(kinematics REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
 add_executable(control_node src/control_node.cpp)
 
-ament_target_dependencies(control_node rclcpp std_msgs geometry_msgs)
+ament_target_dependencies(control_node rclcpp std_msgs geometry_msgs kinematics)
 
 target_include_directories(control_node PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
+
+include_directories(
+  include
+)
 
 install(TARGETS control_node
   DESTINATION lib/${PROJECT_NAME})

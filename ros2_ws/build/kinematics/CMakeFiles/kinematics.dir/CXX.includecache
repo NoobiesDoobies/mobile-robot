@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/carlios/mobile-robot/ros2_ws/src/kinematics/include/kinematics/differential_drive.h
+
+/home/carlios/mobile-robot/ros2_ws/src/kinematics/src/differential_drive.cpp
+kinematics/differential_drive.h
+/home/carlios/mobile-robot/ros2_ws/src/kinematics/src/kinematics/differential_drive.h
+

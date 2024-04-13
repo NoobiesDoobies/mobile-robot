@@ -18,6 +18,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/carlios/mobile-robot/ros2_ws/src/control/include"
+  "/home/carlios/mobile-robot/ros2_ws/install/kinematics/include"
   "/opt/ros/foxy/include"
   )
 
