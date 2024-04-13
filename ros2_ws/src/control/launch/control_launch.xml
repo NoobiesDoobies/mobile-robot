@@ -1,8 +1,0 @@
-<launch>
-    <node 
-        pkg="control"
-        exec="control_node"
-        name="control_node"
-        output="screen"
-    />
-</launch>

@@ -1,9 +1,0 @@
-/home/carlios/mobile-robot/ros2_ws/src/build/meta_launch/CMakeFiles/install/local.dir
-/home/carlios/mobile-robot/ros2_ws/src/build/meta_launch/CMakeFiles/install.dir
-/home/carlios/mobile-robot/ros2_ws/src/build/meta_launch/CMakeFiles/list_install_components.dir
-/home/carlios/mobile-robot/ros2_ws/src/build/meta_launch/CMakeFiles/rebuild_cache.dir
-/home/carlios/mobile-robot/ros2_ws/src/build/meta_launch/CMakeFiles/edit_cache.dir
-/home/carlios/mobile-robot/ros2_ws/src/build/meta_launch/CMakeFiles/test.dir
-/home/carlios/mobile-robot/ros2_ws/src/build/meta_launch/CMakeFiles/install/strip.dir
-/home/carlios/mobile-robot/ros2_ws/src/build/meta_launch/CMakeFiles/meta_launch_uninstall.dir
-/home/carlios/mobile-robot/ros2_ws/src/build/meta_launch/CMakeFiles/uninstall.dir

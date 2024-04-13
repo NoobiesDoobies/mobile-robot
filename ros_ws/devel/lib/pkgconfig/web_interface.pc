@@ -1,0 +1,8 @@
+prefix=/home/carlios/mobile-robot/ros_ws/devel
+
+Name: web_interface
+Description: Description of web_interface
+Version: 0.0.0
+Cflags: -I/home/carlios/mobile-robot/ros_ws/src/web_interface/include
+Libs: -L${prefix}/lib -lweb_interface
+Requires: geometry_msgs roscpp std_msgs nav_msgs

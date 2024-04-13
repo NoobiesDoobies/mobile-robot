@@ -1,0 +1,11 @@
+<launch>
+    <rosparam command="load" file="$(find web_interface)/config/web_interface.yaml" />
+
+
+    <node 
+        pkg="web_interface"
+        type="web_interface_node"
+        name="web_interface_node"
+        output="screen"
+    />
+</launch>

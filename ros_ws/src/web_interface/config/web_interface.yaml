@@ -1,0 +1,19 @@
+topic:
+  cmd_vel: 
+    topic: /cmd_vel
+    type: geometry_msgs/Twist
+  odom: 
+    topic: /odom
+    type: nav_msgs/Odometry
+  scan:
+    topic: /scan
+    type: sensor_msgs/LaserScan
+  cmd_pose: 
+    topic: /cmd_pose
+    type: geometry_msgs/PoseStamped
+  pose: 
+    topic: /pose
+    type: geometry_msgs/PoseStamped
+  vel: 
+    topic: /vel
+    type: geometry_msgs/Twist
