@@ -3,7 +3,7 @@
 RosserialInterface::RosserialInterface(ros::NodeHandle &nh) : nh_(nh)
 {
     // initialize publisher
-    wheel_vel_pub_ = nh_.advertise<std_msgs::Float32MultiArray>("/wheel_velocities", 1);
+    wheel_vel_pub_ = nh_.advertise<std_msgs::Float32MultiArray>("/wheel_vel_cmd", 1);
 }
 
 void RosserialInterface::publishWheelVelocities(double* wheel_velocities)
