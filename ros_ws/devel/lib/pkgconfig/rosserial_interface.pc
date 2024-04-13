@@ -1,0 +1,8 @@
+prefix=/home/carlios/mobile-robot/ros_ws/devel
+
+Name: rosserial_interface
+Description: Description of rosserial_interface
+Version: 0.0.0
+Cflags: -I/home/carlios/mobile-robot/ros_ws/src/rosserial_interface/include
+Libs: -L${prefix}/lib -lrosserial_interface
+Requires: geometry_msgs roscpp std_msgs nav_msgs

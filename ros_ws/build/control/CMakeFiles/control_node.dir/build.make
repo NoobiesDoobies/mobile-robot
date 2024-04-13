@@ -79,6 +79,8 @@ control_node_EXTERNAL_OBJECTS =
 
 /home/carlios/mobile-robot/ros_ws/devel/lib/control/control_node: control/CMakeFiles/control_node.dir/src/control_node.cpp.o
 /home/carlios/mobile-robot/ros_ws/devel/lib/control/control_node: control/CMakeFiles/control_node.dir/build.make
+/home/carlios/mobile-robot/ros_ws/devel/lib/control/control_node: /home/carlios/mobile-robot/ros_ws/devel/lib/libweb_interface.so
+/home/carlios/mobile-robot/ros_ws/devel/lib/control/control_node: /home/carlios/mobile-robot/ros_ws/devel/lib/librosserial_interface.so
 /home/carlios/mobile-robot/ros_ws/devel/lib/control/control_node: /opt/ros/noetic/lib/libroscpp.so
 /home/carlios/mobile-robot/ros_ws/devel/lib/control/control_node: /usr/lib/x86_64-linux-gnu/libpthread.so
 /home/carlios/mobile-robot/ros_ws/devel/lib/control/control_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0
@@ -96,6 +98,7 @@ control_node_EXTERNAL_OBJECTS =
 /home/carlios/mobile-robot/ros_ws/devel/lib/control/control_node: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
 /home/carlios/mobile-robot/ros_ws/devel/lib/control/control_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
 /home/carlios/mobile-robot/ros_ws/devel/lib/control/control_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+/home/carlios/mobile-robot/ros_ws/devel/lib/control/control_node: /home/carlios/mobile-robot/ros_ws/devel/lib/libkinematics.so
 /home/carlios/mobile-robot/ros_ws/devel/lib/control/control_node: control/CMakeFiles/control_node.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/carlios/mobile-robot/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/carlios/mobile-robot/ros_ws/devel/lib/control/control_node"
 	cd /home/carlios/mobile-robot/ros_ws/build/control && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/control_node.dir/link.txt --verbose=$(VERBOSE)

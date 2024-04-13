@@ -32,7 +32,7 @@ const Config = {
   HSV_CONFIG_TOPIC_MESSAGE_TYPE: "std_msgs/Int32MultiArray",
   POSE_TOPIC: "amcl_pose",
   POSE_TOPIC_MESSAGE_TYPE: "geometry_msgs/PoseWithCovarianceStamped",
-  TWIST_COMMAND_TOPIC: "/cmd_vel",
+  TWIST_COMMAND_TOPIC: "/cmd_twist",
   TWIST_COMMAND_TOPIC_MESSAGE_TYPE: "geometry_msgs/Twist",
 };
 

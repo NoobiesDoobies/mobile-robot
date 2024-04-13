@@ -1,2 +1,2 @@
-control:launch:web_interface
+control:launch:rosserial_interface:web_interface
 -DCATKIN_DEVEL_PREFIX=/home/carlios/mobile-robot/ros_ws/devel -DCMAKE_INSTALL_PREFIX=/home/carlios/mobile-robot/ros_ws/install -G Unix Makefiles

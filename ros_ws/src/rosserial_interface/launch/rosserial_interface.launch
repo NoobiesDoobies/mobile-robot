@@ -1,0 +1,16 @@
+<launch>
+    <rosparam command="load" file="$(find rosserial_interface)/config/rosserial_interface.yaml" />
+    <!-- use tcp -->
+
+    <node
+        pkg="rosserial_python"
+        type="serial_node.py"
+        name="rosserial_interface"
+        output="screen"
+    >
+        <param name="port" type="string" value="tcp" />
+        <param name="tcp_port" type="int" value="11411" />
+    </node>
+
+
+</launch>

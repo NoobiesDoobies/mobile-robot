@@ -132,8 +132,9 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/carlios/mobile-robot/ros_ws/build/gtest/cmake_install.cmake")
   include("/home/carlios/mobile-robot/ros_ws/build/launch/cmake_install.cmake")
-  include("/home/carlios/mobile-robot/ros_ws/build/control/cmake_install.cmake")
+  include("/home/carlios/mobile-robot/ros_ws/build/rosserial_interface/cmake_install.cmake")
   include("/home/carlios/mobile-robot/ros_ws/build/web_interface/cmake_install.cmake")
+  include("/home/carlios/mobile-robot/ros_ws/build/control/cmake_install.cmake")
 
 endif()
 

@@ -80,6 +80,28 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -112,28 +134,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,46 +168,46 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-web_interface/CMakeFiles/web_interface_node.dir/rule:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 web_interface/CMakeFiles/web_interface_node.dir/rule
-.PHONY : web_interface/CMakeFiles/web_interface_node.dir/rule
+web_interface/CMakeFiles/web_interface.dir/rule:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 web_interface/CMakeFiles/web_interface.dir/rule
+.PHONY : web_interface/CMakeFiles/web_interface.dir/rule
 
 # Convenience name for target.
-web_interface_node: web_interface/CMakeFiles/web_interface_node.dir/rule
+web_interface: web_interface/CMakeFiles/web_interface.dir/rule
 
-.PHONY : web_interface_node
+.PHONY : web_interface
 
 # fast build rule for target.
-web_interface_node/fast:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f web_interface/CMakeFiles/web_interface_node.dir/build.make web_interface/CMakeFiles/web_interface_node.dir/build
-.PHONY : web_interface_node/fast
+web_interface/fast:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f web_interface/CMakeFiles/web_interface.dir/build.make web_interface/CMakeFiles/web_interface.dir/build
+.PHONY : web_interface/fast
 
-src/web_interface_node.o: src/web_interface_node.cpp.o
+src/web_interface/web_interface.o: src/web_interface/web_interface.cpp.o
 
-.PHONY : src/web_interface_node.o
+.PHONY : src/web_interface/web_interface.o
 
 # target to build an object file
-src/web_interface_node.cpp.o:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f web_interface/CMakeFiles/web_interface_node.dir/build.make web_interface/CMakeFiles/web_interface_node.dir/src/web_interface_node.cpp.o
-.PHONY : src/web_interface_node.cpp.o
+src/web_interface/web_interface.cpp.o:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f web_interface/CMakeFiles/web_interface.dir/build.make web_interface/CMakeFiles/web_interface.dir/src/web_interface/web_interface.cpp.o
+.PHONY : src/web_interface/web_interface.cpp.o
 
-src/web_interface_node.i: src/web_interface_node.cpp.i
+src/web_interface/web_interface.i: src/web_interface/web_interface.cpp.i
 
-.PHONY : src/web_interface_node.i
+.PHONY : src/web_interface/web_interface.i
 
 # target to preprocess a source file
-src/web_interface_node.cpp.i:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f web_interface/CMakeFiles/web_interface_node.dir/build.make web_interface/CMakeFiles/web_interface_node.dir/src/web_interface_node.cpp.i
-.PHONY : src/web_interface_node.cpp.i
+src/web_interface/web_interface.cpp.i:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f web_interface/CMakeFiles/web_interface.dir/build.make web_interface/CMakeFiles/web_interface.dir/src/web_interface/web_interface.cpp.i
+.PHONY : src/web_interface/web_interface.cpp.i
 
-src/web_interface_node.s: src/web_interface_node.cpp.s
+src/web_interface/web_interface.s: src/web_interface/web_interface.cpp.s
 
-.PHONY : src/web_interface_node.s
+.PHONY : src/web_interface/web_interface.s
 
 # target to generate assembly for a file
-src/web_interface_node.cpp.s:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f web_interface/CMakeFiles/web_interface_node.dir/build.make web_interface/CMakeFiles/web_interface_node.dir/src/web_interface_node.cpp.s
-.PHONY : src/web_interface_node.cpp.s
+src/web_interface/web_interface.cpp.s:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f web_interface/CMakeFiles/web_interface.dir/build.make web_interface/CMakeFiles/web_interface.dir/src/web_interface/web_interface.cpp.s
+.PHONY : src/web_interface/web_interface.cpp.s
 
 # Help Target
 help:
@@ -217,15 +217,15 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... test"
-	@echo "... web_interface_node"
-	@echo "... src/web_interface_node.o"
-	@echo "... src/web_interface_node.i"
-	@echo "... src/web_interface_node.s"
+	@echo "... web_interface"
+	@echo "... src/web_interface/web_interface.o"
+	@echo "... src/web_interface/web_interface.i"
+	@echo "... src/web_interface/web_interface.s"
 .PHONY : help
 
 

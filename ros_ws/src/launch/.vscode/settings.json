@@ -1,0 +1,14 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/carlios/car-lios/devel/lib/python3/dist-packages",
+        "/home/carlios/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "/home/carlios/car-lios/src/hardware_bridge/scripts"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/carlios/car-lios/devel/lib/python3/dist-packages",
+        "/home/carlios/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "/home/carlios/car-lios/src/hardware_bridge/scripts"
+    ]
+}

@@ -56,6 +56,42 @@ CMAKE_BINARY_DIR = /home/carlios/mobile-robot/ros_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -78,29 +114,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -111,29 +124,16 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target test
+test/fast: test
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,34 +168,154 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+control/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
+.PHONY : control/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_eus: control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+nav_msgs_generate_messages_eus: control/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_eus
+.PHONY : nav_msgs_generate_messages_eus
 
 # fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make control/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
+nav_msgs_generate_messages_eus/fast:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/nav_msgs_generate_messages_eus.dir/build.make control/CMakeFiles/nav_msgs_generate_messages_eus.dir/build
+.PHONY : nav_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-control/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : control/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+control/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
+.PHONY : control/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_py: control/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+nav_msgs_generate_messages_cpp: control/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : std_msgs_generate_messages_py
+.PHONY : nav_msgs_generate_messages_cpp
 
 # fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/std_msgs_generate_messages_py.dir/build.make control/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
+nav_msgs_generate_messages_cpp/fast:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build.make control/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build
+.PHONY : nav_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+control/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
+.PHONY : control/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+nav_msgs_generate_messages_lisp: control/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : nav_msgs_generate_messages_lisp
+
+# fast build rule for target.
+nav_msgs_generate_messages_lisp/fast:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build.make control/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build
+.PHONY : nav_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+control/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+.PHONY : control/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_cpp: control/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_cpp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_cpp/fast:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make control/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
+.PHONY : actionlib_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+control/CMakeFiles/nav_msgs_generate_messages_py.dir/rule:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+.PHONY : control/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+nav_msgs_generate_messages_py: control/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+
+.PHONY : nav_msgs_generate_messages_py
+
+# fast build rule for target.
+nav_msgs_generate_messages_py/fast:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/nav_msgs_generate_messages_py.dir/build.make control/CMakeFiles/nav_msgs_generate_messages_py.dir/build
+.PHONY : nav_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+control/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+.PHONY : control/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_eus: control/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_eus
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_eus/fast:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make control/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
+.PHONY : actionlib_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+control/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
+.PHONY : control/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_nodejs: control/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_nodejs/fast:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make control/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
+.PHONY : actionlib_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+control/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+.PHONY : control/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_py: control/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_py
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_py/fast:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make control/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
+.PHONY : actionlib_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+control/CMakeFiles/kinematics.dir/rule:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/kinematics.dir/rule
+.PHONY : control/CMakeFiles/kinematics.dir/rule
+
+# Convenience name for target.
+kinematics: control/CMakeFiles/kinematics.dir/rule
+
+.PHONY : kinematics
+
+# fast build rule for target.
+kinematics/fast:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/kinematics.dir/build.make control/CMakeFiles/kinematics.dir/build
+.PHONY : kinematics/fast
+
+# Convenience name for target.
+control/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
+.PHONY : control/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+nav_msgs_generate_messages_nodejs: control/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : nav_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+nav_msgs_generate_messages_nodejs/fast:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build.make control/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build
+.PHONY : nav_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 control/CMakeFiles/control_node.dir/rule:
@@ -213,274 +333,46 @@ control_node/fast:
 .PHONY : control_node/fast
 
 # Convenience name for target.
-control/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : control/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+control/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+.PHONY : control/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_nodejs: control/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+actionlib_msgs_generate_messages_lisp: control/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : std_msgs_generate_messages_nodejs
+.PHONY : actionlib_msgs_generate_messages_lisp
 
 # fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make control/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
+actionlib_msgs_generate_messages_lisp/fast:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make control/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
+.PHONY : actionlib_msgs_generate_messages_lisp/fast
 
-# Convenience name for target.
-control/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : control/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+include/kinematics/differential_drive.o: include/kinematics/differential_drive.cpp.o
 
-# Convenience name for target.
-geometry_msgs_generate_messages_py: control/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : include/kinematics/differential_drive.o
 
-.PHONY : geometry_msgs_generate_messages_py
+# target to build an object file
+include/kinematics/differential_drive.cpp.o:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/kinematics.dir/build.make control/CMakeFiles/kinematics.dir/include/kinematics/differential_drive.cpp.o
+.PHONY : include/kinematics/differential_drive.cpp.o
 
-# fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make control/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
+include/kinematics/differential_drive.i: include/kinematics/differential_drive.cpp.i
 
-# Convenience name for target.
-control/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : control/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+.PHONY : include/kinematics/differential_drive.i
 
-# Convenience name for target.
-roscpp_generate_messages_cpp: control/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+# target to preprocess a source file
+include/kinematics/differential_drive.cpp.i:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/kinematics.dir/build.make control/CMakeFiles/kinematics.dir/include/kinematics/differential_drive.cpp.i
+.PHONY : include/kinematics/differential_drive.cpp.i
 
-.PHONY : roscpp_generate_messages_cpp
+include/kinematics/differential_drive.s: include/kinematics/differential_drive.cpp.s
 
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make control/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
+.PHONY : include/kinematics/differential_drive.s
 
-# Convenience name for target.
-control/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : control/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_eus: control/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-.PHONY : roscpp_generate_messages_eus
-
-# fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/roscpp_generate_messages_eus.dir/build.make control/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
-
-# Convenience name for target.
-control/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : control/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: control/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make control/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-control/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : control/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: control/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make control/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-control/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : control/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_py: control/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-.PHONY : roscpp_generate_messages_py
-
-# fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/roscpp_generate_messages_py.dir/build.make control/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
-
-# Convenience name for target.
-control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_lisp: control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make control/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-control/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : control/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_eus: control/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-.PHONY : std_msgs_generate_messages_eus
-
-# fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make control/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-control/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : control/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_nodejs: control/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-.PHONY : roscpp_generate_messages_nodejs
-
-# fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make control/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
-
-# Convenience name for target.
-control/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : control/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: control/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make control/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-control/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : control/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_cpp: control/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : std_msgs_generate_messages_cpp
-
-# fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make control/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-control/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : control/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_eus: control/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_eus
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make control/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-control/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : control/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: control/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_lisp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make control/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-.PHONY : control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_nodejs: control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make control/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_cpp: control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-control/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-.PHONY : control/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_lisp: control/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-.PHONY : roscpp_generate_messages_lisp
-
-# fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make control/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
-
-# Convenience name for target.
-control/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 control/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : control/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_py: control/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_py
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make control/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
+# target to generate assembly for a file
+include/kinematics/differential_drive.cpp.s:
+	cd /home/carlios/mobile-robot/ros_ws/build && $(MAKE) -f control/CMakeFiles/kinematics.dir/build.make control/CMakeFiles/kinematics.dir/include/kinematics/differential_drive.cpp.s
+.PHONY : include/kinematics/differential_drive.cpp.s
 
 src/control_node.o: src/control_node.cpp.o
 
@@ -515,34 +407,28 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install/strip"
+	@echo "... install/local"
+	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test"
-	@echo "... install/local"
-	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... std_msgs_generate_messages_py"
-	@echo "... control_node"
-	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... roscpp_generate_messages_eus"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
+	@echo "... nav_msgs_generate_messages_eus"
+	@echo "... nav_msgs_generate_messages_cpp"
+	@echo "... nav_msgs_generate_messages_lisp"
 	@echo "... list_install_components"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... roscpp_generate_messages_py"
-	@echo "... install"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... std_msgs_generate_messages_eus"
-	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... install/strip"
-	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... geometry_msgs_generate_messages_nodejs"
-	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... actionlib_msgs_generate_messages_cpp"
+	@echo "... nav_msgs_generate_messages_py"
+	@echo "... actionlib_msgs_generate_messages_eus"
+	@echo "... actionlib_msgs_generate_messages_nodejs"
+	@echo "... actionlib_msgs_generate_messages_py"
+	@echo "... kinematics"
+	@echo "... nav_msgs_generate_messages_nodejs"
+	@echo "... control_node"
+	@echo "... actionlib_msgs_generate_messages_lisp"
+	@echo "... test"
+	@echo "... include/kinematics/differential_drive.o"
+	@echo "... include/kinematics/differential_drive.i"
+	@echo "... include/kinematics/differential_drive.s"
 	@echo "... src/control_node.o"
 	@echo "... src/control_node.i"
 	@echo "... src/control_node.s"

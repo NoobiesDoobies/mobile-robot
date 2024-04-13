@@ -3,6 +3,6 @@ prefix=/home/carlios/mobile-robot/ros_ws/devel
 Name: control
 Description: Description of control
 Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: roscpp std_msgs geometry_msgs
+Cflags: -I/home/carlios/mobile-robot/ros_ws/src/control/include
+Libs: -L${prefix}/lib -lkinematics
+Requires: roscpp std_msgs geometry_msgs web_interface rosserial_interface

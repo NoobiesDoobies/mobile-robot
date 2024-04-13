@@ -1,11 +1,17 @@
 <launch>
     <rosparam command="load" file="$(find web_interface)/config/web_interface.yaml" />
 
-
     <node 
+        pkg="rosbridge_server"
+        type="rosbridge_websocket"
+        name="rosbridge_websocket"
+        output="screen"
+        args="--port 9090 --address 192.168.0.64"
+    />
+    <!-- <node 
         pkg="web_interface"
         type="web_interface_node"
         name="web_interface_node"
         output="screen"
-    />
+    /> -->
 </launch>
