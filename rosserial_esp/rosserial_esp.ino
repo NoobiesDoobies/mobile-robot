@@ -12,6 +12,7 @@
 #include "WiFi.h"
 #include <ros.h>
 #include <std_msgs/String.h>
+#include <std_msgs/Float32MultiArray.h>
 
 const char* ssid     = "Tselhome-5423";
 const char* password = "71531656";
@@ -25,52 +26,11 @@ ros::NodeHandle nh;
 std_msgs::String str_msg;
 ros::Publisher chatter("chatter", &str_msg);
 
+// Subscriber and callback function
+void wheelVelCmdCb(const std_msgs::Float32MultiArray& wheel_velocities_command);
+ros::Subscriber<std_msgs::Float32MultiArray> wheel_vel_sub("/wheel_vel_cmd", &wheelVelCmdCb);
+
 // Be polite and say hello
 char hello[13] = "hello world!";
 
-void setup()
-{
-  // Use ESP8266 serial to monitor the process
-  Serial.begin(115200);
-  Serial.println();
-  Serial.print("Connecting to ");
-  Serial.println(ssid);
 
-  // Connect the ESP8266 the the wifi AP
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-  Serial.println("");
-  Serial.println("WiFi connected");
-  Serial.println("IP address: ");
-  Serial.println(WiFi.localIP());
-
-  // Set the connection to rosserial socket server
-  nh.getHardware()->setConnection(server, serverPort);
-  nh.initNode();
-
-  // Another way to get IP
-  Serial.print("IP = ");
-  Serial.println(nh.getHardware()->getLocalIP());
-
-  // Start to be polite
-  nh.advertise(chatter);
-}
-
-void loop()
-{
-
-  if (nh.connected()) {
-    Serial.println("Connected");
-    // Say hello
-    str_msg.data = hello;
-    chatter.publish( &str_msg );
-  } else {
-    Serial.println("Not Connected");
-  }
-  nh.spinOnce();
-  // Loop exproximativly at 1Hz
-  delay(1000);
-}

@@ -5,3 +5,5 @@ topic:
   pose: /curr_pose
   odom: /odom
   scan: /scan
+
+port: tcp
