@@ -14,6 +14,8 @@
 #include <std_msgs/String.h>
 #include <std_msgs/Float32MultiArray.h>
 
+#define LED_PIN 2
+
 const char* ssid     = "Tselhome-5423";
 const char* password = "71531656";
 // Set the rosserial socket server IP address

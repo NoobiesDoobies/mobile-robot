@@ -85,8 +85,9 @@ const Teleop = () => {
     }
 
     return (
-        <div className="">
-            <Joystick size={100} baseColor="#000000" stickColor="#FFFFFF" move={onMove} stop={onStop} />
+        <div className="h-full w-full flex justify-center items-center">
+            {/* base color gray */}
+            <Joystick size={400} baseColor="#808080" stickColor="#FFFFFF" move={onMove} stop={onStop} />
         </div>
 
 
